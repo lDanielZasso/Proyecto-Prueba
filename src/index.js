@@ -8,13 +8,16 @@ app.set('view engine', 'ejs');  // configuración del motor de plantilla a utili
 app.set('views', path.join(__dirname, 'views'));  //especifica la ruta base de las vistas (views o plantillas)
                 //path.join ajusta las barras invertidas (\ o /) ya que difiere en distintos sistemas operativos.
 
-//middlewares
+// middlewares
 
 
-//routes
+// routes
 
 app.use(require('./routes/index'));  // utilizamos un enrutador a las distintas páginas webs del sitio. 
 
+// static files
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // listening the server
 
